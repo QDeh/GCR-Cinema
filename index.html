@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/main.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <img src="/images/logo.webp" alt="logo" id="logo"/>
+        <img src="/images/logo.webp" alt="logo" id="logo" />
         <nav>
-            <input type="search"/>
-            <button id="search"><img src="/images/search_icon.png" id="search-logo"/></button>
+            <input type="search" />
+            <button id="search"><img src="/images/search_icon.png" id="search-logo" /></button>
+            <button popovertarget="btn-filtre"> Filtre</button>
+            <ul id="btn-filtre" popover>
+                <H2>genre</H2>
+                <li><input type="checkbox" name="action" id="action" value="28" /><label for="action">Action</label>
+                </li>
+                <li><input type="checkbox" name="abenteuer" id="abenteuer" value="12" /><label
+                        for="abenteuer">Abenteuer</label></li>
+                <li><input type="checkbox" name="animation" id="animation" value="16" /><label
+                        for="animation">animation</label></li>
+                <li><input type="checkbox" name="komödie" id="komödie" value="35" /><label for="komödie">Komödie</label>
+                </li>
+                <li><input type="checkbox" name="krimi" id="krimi" value="80" /><label for="krimi">Krimi</label></li>
+                <li><input type="checkbox" name="dokumentarfilm" id="dokumentarfilm" value="99" /><label
+                        for="dokumentarfilm">Dokumentarfilm</label></li>
+                <li><input type="checkbox" name="drama" id="drama" value="18" /><label for="drama">Drama</label></li>
+                <li><input type="checkbox" name="familie" id="familie" value="10751" /><label
+                        for="familie">Familie</label></li>
+                <li><input type="checkbox" name="fantasy" id="fantasy" value="14" /><label for="fantasy">fantasy</label>
+                </li>
+                <li><input type="checkbox" name="historie" id="historie" value="36" /><label
+                        for="historie">Historie</label></li>
+                <li><input type="checkbox" name="horror" id="horror" value="27" /><label for="horror">Horror</label>
+                </li>
+                <li><input type="checkbox" name="musik" id="musik" value="10402" /><label for="musik">Musik</label></li>
+                <li><input type="checkbox" name="mystery" id="mystery" value="9648" /><label
+                        for="mystery">Mystery</label></li>
+                <li><input type="checkbox" name="liebesfilm" id="liebesfilm" value="10749" /><label
+                        for="liebesfilm">Liebesfilm</label></li>
+                <li><input type="checkbox" name="science-fiction" id="science-fiction" value="878" /><label
+                        for="science-fiction">Science-Fiction</label></li>
+                <li><input type="checkbox" name="tv-film" id="tv-film" value="10770" /><label
+                        for="tv-film">TV-Film</label></li>
+                <li><input type="checkbox" name="thriller" id="thriller" value="53" /><label
+                        for="thriller">Thriller</label></li>
+                <li><input type="checkbox" name="kriegsfilm" id="kriegsfilm" value="10752" /><label
+                        for="kriegsfilm">Kriegsfilm</label></li>
+                <li><input type="checkbox" name="western" id="western" value="37" /><label for="western">Western</label>
+                </li>
+            </ul>
         </nav>
     </header>
     <main>
-
+      
     </main>
     <footer>
-
+        <a href="https://github.com/QDeh/GCR-Cinema"><img src="/images/Github_icon.png" id="github-icon"
+                alt="icone Github"></a>
+        <p>powered by TheMovieDB</p>
     </footer>
 </body>
+
 </html>
