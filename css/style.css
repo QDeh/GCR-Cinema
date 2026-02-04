@@ -1,4 +1,11 @@
 /* Réinitialisation de base */
+#logo {
+    height:120px;
+}
+
+#search-logo  {
+    height: 12px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,10 +17,10 @@ body {
 }
 
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+    display: flex;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
 }
 
 .film-grid {
