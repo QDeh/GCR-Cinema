@@ -23,16 +23,8 @@ footer {
 
 #github-icon {
   height: 90px;
+
 }
-
-
-
-
-
-
-
-
-
 
 body {
   font-family: Arial, sans-serif;
@@ -46,7 +38,7 @@ header {
   padding: 20px;
 }
 
-.film-grid {
+main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -54,35 +46,39 @@ header {
   padding: 20px;
 }
 
-.film-card {
+.movie-card {
   width: calc(50% - 20px);
   border: 1px solid #ddd;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.film-card a {
+.movie-card a {
   text-decoration: none;
   color: black;
 }
 
-.film-card img {
+.movie-card img {
   width: 100%;
   height: auto;
 }
 
-.film-card h2,
-.film-card p {
+.movie-card h2,
+.movie-card p {
   padding: 0 15px;
 }
 
-.film-details {
+.movie-details {
   padding: 20px;
 }
 
-.film-details img {
+.movie-details img {
   width: 100%;
   height: auto;
+}
+
+.company-logo {
+  height: 50px;
 }
 
 .film-recommendations {
@@ -134,11 +130,11 @@ header {
 }
 
 @media (min-width: 600px) {
-  .film-card {
+  .movie-card {
     width: calc(33.333% - 20px);
   }
 
-  .film-details img {
+  .movie-details img {
     max-height: 400px;
     /* limite la hauteur de l'image pour éviter qu'elle soit trop grande */
     object-fit: cover;
@@ -147,14 +143,14 @@ header {
     /* ajoute un peu d'espace entre l'image et le texte à côté */
   }
 
-  .film-details>* {
+  .movie-details>* {
     flex: 1;
     /* donne une flexibilité égale aux éléments enfants direct de .film-details, permettant un arrangement plus équilibré */
   }
 }
 
 @media (min-width: 900px) {
-  .film-card {
+  .movie-card {
     width: calc(25% - 20px);
   }
 }
