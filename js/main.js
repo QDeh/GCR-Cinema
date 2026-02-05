@@ -138,7 +138,7 @@ async function main() {
 
                 const producers = document.createElement("section")
 
-                const producer = document.createElement("p")
+                const producer = document.createElement("h3")
                 producer.textContent = `Producers :`
 
                 producers.appendChild(producer)
