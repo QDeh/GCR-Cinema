@@ -70,7 +70,7 @@ fetch('/.env')
 
 
 async function getMovieByPage(page) {
-    const url = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&sort=primary_release_date.asc`)
+    const url = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&sort_by=primary_release_date.desc`)
     return await url.json()
 }
 
