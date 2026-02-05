@@ -22,7 +22,7 @@ async function getDetails(movie_id) {
 
 async function main() {
     getMovieByPage(page).then(async (pageResult) => {
-        const main = document.querySelector('main')
+        const movieSection = document.querySelector('#movies')
         for (let movie of pageResult.results) {
             // create the movie card
             const movieArticle = document.createElement("article")
@@ -65,7 +65,7 @@ async function main() {
                 movieArticle.appendChild(movieGenre)
             }
             // insert the card in the page
-            main.appendChild(movieArticle)
+            movieSection.appendChild(movieArticle)
 
             // makes the click on the card possible
             movieArticle.addEventListener("click", (event) => {
@@ -76,7 +76,7 @@ async function main() {
                 }
                 //create the bialog element
                 const movieDetails = document.createElement("dialog")
-                main.appendChild(movieDetails)
+                movieSection.appendChild(movieDetails)
 
                 const dialogForm = document.createElement("form")
                 dialogForm.method = "dialog"
