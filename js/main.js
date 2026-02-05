@@ -1,5 +1,64 @@
-let page = 1
+let currentPage = 1
+const pagesCount = 500
 let API_KEY;
+
+function renderPagination(current, total) {
+
+    const container = document.querySelector('#pagination')
+    container.innerHTML = ''
+
+    const prevBtn = document.createElement('button')
+    prevBtn.textContent = "<<"
+    container.appendChild(prevBtn)
+    prevBtn.addEventListener("click", (event) => {
+              currentPage--
+              window.scrollTo(0, 0)
+              renderMovies()
+              renderPagination(currentPage, total)
+        })
+
+    let pages = [1]
+
+    const start = Math.max(2, current - 2)
+    const end = Math.min(total - 1, current + 2)
+
+    if (start > 2) pages.push('...')
+    for (let i = start; i <= end; i++) {
+        pages.push(i)
+    }
+    if (end < total - 1) pages.push('...')
+    if (total > 1) pages.push(total)
+
+    for (let page of pages) {
+        const btn = document.createElement('button')
+        btn.textContent = page
+        btn.className = (page === current) ? 'active' : ''
+
+        if (page === "...") {
+            btn.disabled = true
+            btn.classList.add('dots')
+        }
+        else if (page != current) {
+            btn.classList.add('pagination-number')
+            btn.addEventListener("click", (event) => {
+                currentPage = page
+                window.scrollTo(0, 0)
+                renderMovies()
+                renderPagination(page, total)
+            })
+        }
+        container.appendChild(btn)
+    }
+    const nextBtn = document.createElement('button')
+    nextBtn.textContent = ">>"
+    container.appendChild(nextBtn)
+    nextBtn.addEventListener("click", (event) => {
+                currentPage++
+                window.scrollTo(0, 0)
+                renderMovies()
+                renderPagination(currentPage, total)
+            })
+}
 
 fetch('/.env')
     .then(response => response.text())
@@ -21,8 +80,15 @@ async function getDetails(movie_id) {
 }
 
 async function main() {
-    getMovieByPage(page).then(async (pageResult) => {
+    renderPagination(currentPage, pagesCount)
+    renderMovies()
+}
+
+async function renderMovies() {
+    getMovieByPage(currentPage).then(async (pageResult) => {
         const movieSection = document.querySelector('#movies')
+        movieSection.innerHTML = ''
+
         for (let movie of pageResult.results) {
             // create the movie card
             const movieArticle = document.createElement("article")
