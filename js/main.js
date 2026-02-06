@@ -7,15 +7,18 @@ function renderPagination(current, total) {
     const container = document.querySelector('#pagination')
     container.innerHTML = ''
 
-    const prevBtn = document.createElement('button')
-    prevBtn.textContent = "<<"
-    container.appendChild(prevBtn)
-    prevBtn.addEventListener("click", (event) => {
-              currentPage--
-              window.scrollTo(0, 0)
-              renderMovies()
-              renderPagination(currentPage, total)
+    // add the prev button only when the displayed page isn't 1
+    if (currentPage != 1) { 
+        const prevBtn = document.createElement('button')
+        prevBtn.textContent = "<<"
+        container.appendChild(prevBtn)
+        prevBtn.addEventListener("click", (event) => {
+            currentPage--
+            window.scrollTo(0, 0)
+            renderMovies()
+            renderPagination(currentPage, total)
         })
+    }
 
     let pages = [1]
 
@@ -49,15 +52,18 @@ function renderPagination(current, total) {
         }
         container.appendChild(btn)
     }
-    const nextBtn = document.createElement('button')
-    nextBtn.textContent = ">>"
-    container.appendChild(nextBtn)
-    nextBtn.addEventListener("click", (event) => {
-                currentPage++
-                window.scrollTo(0, 0)
-                renderMovies()
-                renderPagination(currentPage, total)
-            })
+    // add the next button only when the displayed page isn't the maxium number
+    if (currentPage != pagesCount) {
+        const nextBtn = document.createElement('button')
+        nextBtn.textContent = ">>"
+        container.appendChild(nextBtn)
+        nextBtn.addEventListener("click", (event) => {
+            currentPage++
+            window.scrollTo(0, 0)
+            renderMovies()
+            renderPagination(currentPage, total)
+        })
+    }
 }
 
 fetch('/.env')
