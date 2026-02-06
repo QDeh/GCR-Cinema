@@ -82,6 +82,46 @@ header {
   height: 50px;
 }
 
+#pagination{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  gap: 2px;
+}
+
+#pagination button {
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid;
+}
+
+#pagination .prev-next {
+    background-color: #949695;
+    color: white;
+    border-color: #5c6061;
+}
+
+#pagination .pagination-number  {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+#pagination .dots{
+  background: none;
+  border: none;
+  color: black;
+  cursor: default;
+}
+
+#pagination .active{
+  background-color: #fdd002;
+  color:#000000;
+  border-color: #c4a308;
+}
+
 .film-recommendations {
   margin-top: 20px;
 }

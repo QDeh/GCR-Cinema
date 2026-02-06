@@ -11,6 +11,7 @@ function renderPagination(current, total) {
     if (currentPage != 1) { 
         const prevBtn = document.createElement('button')
         prevBtn.textContent = "<<"
+        prevBtn.className = "prev-next"
         container.appendChild(prevBtn)
         prevBtn.addEventListener("click", (event) => {
             currentPage--
@@ -56,6 +57,7 @@ function renderPagination(current, total) {
     if (currentPage != pagesCount) {
         const nextBtn = document.createElement('button')
         nextBtn.textContent = ">>"
+        nextBtn.className = "prev-next"
         container.appendChild(nextBtn)
         nextBtn.addEventListener("click", (event) => {
             currentPage++
